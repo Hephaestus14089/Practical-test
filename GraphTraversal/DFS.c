@@ -115,7 +115,7 @@ void dfs_traversal(Graph *graph, int starting_vertex) {
     int vertex;
 
     // initialising the is_visited array
-    for (i = 0; i <= graph->V; i++) { *(is_visited + i) = 0; }
+    for (i = 0; i <= graph->V; i++) { is_visited [i] = 0; }
 
     push(stack, starting_vertex);
 
@@ -127,7 +127,7 @@ void dfs_traversal(Graph *graph, int starting_vertex) {
             printf("%d ", vertex);
         }
 
-        is_visited[j] = 1;
+        is_visited[vertex] = 1;
 
         for (j = 0; j < graph->V; j++) {
 
