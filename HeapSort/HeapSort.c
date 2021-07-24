@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void input(int *arr, int len) {
 
@@ -109,6 +110,8 @@ int main() {
 
     printf("Enter length of array: ");
     scanf("%d", &len);
+
+    arr = (int*)malloc(sizeof(int) * len);
 
     printf("Enter elements in array: ");
     input(arr, len);
