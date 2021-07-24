@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef uint uint;
+typedef unsigned int uint;
 
 struct Job {
 
