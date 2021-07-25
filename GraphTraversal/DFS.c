@@ -124,10 +124,10 @@ void dfs_traversal(Graph *graph, int starting_vertex) {
         vertex = peek(stack);
 
         if (!is_visited[vertex]) {
-            printf("%d ", vertex);
+         
+		printf("%d ", vertex);
+		is_visited[vertex] = 1;
         }
-
-        is_visited[vertex] = 1;
 
         for (j = 0; j < graph->V; j++) {
 
