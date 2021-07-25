@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void merge(int *arr, int lb, int rb, int mid) {
 
@@ -66,10 +67,11 @@ void display(int *arr, int len) {
 int main() {
 	
 	int len;
-	int arr[len];
 
 	printf("Enter length of array: ");
 	scanf("%d", &len);
+	
+	int *arr = (int*)malloc(sizeof(int) * len);
 	
 	printf("Enter elements in array: ");
 	input(arr, len);
