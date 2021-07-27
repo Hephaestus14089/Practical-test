@@ -28,8 +28,12 @@ void maxHeap(int *arr, int len, int root) {
     int left = root * 2 + 1;
     int right = root * 2 + 2;
 
-    if (left < len && *(arr + left) > *(arr + largest)) largest = left;
-    if (right < len && *(arr + right) > *(arr + largest)) largest = right;
+    if (left < len && *(arr + left) > *(arr + largest)) {
+        largest = left;
+    }
+    if (right < len && *(arr + right) > *(arr + largest)) {
+        largest = right;
+    }
 
     if (largest != root) {
 
@@ -66,8 +70,9 @@ void heapSort(int *arr, int len) {
         We achieve this by calling the recursive maxHeap function
         from the last 'parent' node to the 'root' node (0th index)
     */
-    for (; i >= 0; i--) 
+    for (; i >= 0; i--) {
         maxHeap(arr, len, i);
+    }
 
     /*
         Now, swap the last and the first index and call maxHeap on the reduced array
@@ -78,6 +83,10 @@ void heapSort(int *arr, int len) {
 
         swap(arr, (arr + i)); // swapping the first and the current last node
         maxHeap(arr, i, 0); // moving the new largest element to root node (0th index)
+
+        printf("Pass %d: ", len - i);
+        display(arr, len);
+        printf("\n");
     }
 } // end of heapSort(int*, int)
 
@@ -121,9 +130,11 @@ int main() {
     printf("\n");
 
     printf("\n");
+    heapSort(arr, len);
+    printf("\n");
 
     printf("Array in ascending order: ");
-    heapSort(arr, len);
+    
     display(arr, len);
     printf("\n");
 
